@@ -9,7 +9,7 @@ Method | HTTP request | Description
 
 # **systemCreateBlockedRequestAttempt**
 ```swift
-    open class func systemCreateBlockedRequestAttempt(blockedDomainAttemptServer: BlockedDomainAttemptServer, completion: @escaping (_ data: AnyCodable?, _ error: Error?) -> Void)
+    open class func systemCreateBlockedRequestAttempt(blockedDomainAttemptServer: BlockedDomainAttemptServer, completion: @escaping (_ data: JSONValue?, _ error: Error?) -> Void)
 ```
 
 Create Blocked Request Attempt
@@ -44,7 +44,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**AnyCodable**
+**JSONValue**
 
 ### Authorization
 
