@@ -10,7 +10,7 @@ import Foundation
 import AnyCodable
 #endif
 
-public struct HTTPValidationError: Codable, JSONEncodable, Hashable {
+public struct HTTPValidationError: Codable, Hashable {
 
     public var detail: [ValidationError]?
 
@@ -32,5 +32,15 @@ public struct HTTPValidationError: Codable, JSONEncodable, Hashable {
     public init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         self.detail = try container.decodeIfPresent([ValidationError].self, forKey: .detail)
+    }
+
+    // Equatable conformance (required by Hashable)
+    public static func == (lhs: HTTPValidationError, rhs: HTTPValidationError) -> Bool {
+        return lhs.detail == rhs.detail
+    }
+
+    // Hashable conformance
+    public func hash(into hasher: inout Hasher) {
+        hasher.combine(detail)
     }
 }
