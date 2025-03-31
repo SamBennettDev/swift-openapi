@@ -23,10 +23,14 @@ public struct HTTPValidationError: Codable, JSONEncodable, Hashable {
     }
 
     // Encodable protocol methods
-
     public func encode(to encoder: Encoder) throws {
         var container = encoder.container(keyedBy: CodingKeys.self)
         try container.encodeIfPresent(detail, forKey: .detail)
     }
-}
 
+    // Decodable protocol methods
+    public init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        self.detail = try container.decodeIfPresent([ValidationError].self, forKey: .detail)
+    }
+}
