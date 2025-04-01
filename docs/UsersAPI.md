@@ -31,7 +31,7 @@ Create new user (admin only).
 // The following code samples are still beta. For any issue, please report via http://github.com/OpenAPITools/openapi-generator/issues/new
 import OpenAPIClient
 
-let userRegister = UserRegister(email: "email_example", password: "password_example", fullName: "fullName_example") // UserRegister | 
+let userRegister = UserRegister(email: "email_example", fullName: "fullName_example", password: "password_example") // UserRegister | 
 
 // Create User
 UsersAPI.usersCreateUser(userRegister: userRegister) { (response, error) in
@@ -307,7 +307,7 @@ This endpoint does not need any parameter.
 
 # **usersReadUserWithAllData**
 ```swift
-    open class func usersReadUserWithAllData(userId: UUID, completion: @escaping (_ data: JSONValue?, _ error: Error?) -> Void)
+    open class func usersReadUserWithAllData(userId: UUID, completion: @escaping (_ data: AnyCodable?, _ error: Error?) -> Void)
 ```
 
 Read User With All Data
@@ -342,7 +342,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**JSONValue**
+**AnyCodable**
 
 ### Authorization
 
@@ -421,7 +421,7 @@ Register a new user (Supabase sends verification email).
 // The following code samples are still beta. For any issue, please report via http://github.com/OpenAPITools/openapi-generator/issues/new
 import OpenAPIClient
 
-let userRegister = UserRegister(email: "email_example", password: "password_example", fullName: "fullName_example") // UserRegister | 
+let userRegister = UserRegister(email: "email_example", fullName: "fullName_example", password: "password_example") // UserRegister | 
 
 // Register User
 UsersAPI.usersRegisterUser(userRegister: userRegister) { (response, error) in
@@ -472,7 +472,7 @@ Update a user.
 import OpenAPIClient
 
 let userId = 987 // UUID | 
-let userUpdate = UserUpdate(email: "email_example", isActive: false, isSuperuser: false, fullName: "fullName_example", createdAt: Date()) // UserUpdate | 
+let userUpdate = UserUpdate(createdAt: Date(), email: "email_example", fullName: "fullName_example", isActive: false, isSuperuser: false) // UserUpdate | 
 
 // Update User
 UsersAPI.usersUpdateUser(userId: userId, userUpdate: userUpdate) { (response, error) in
@@ -523,7 +523,7 @@ Update own user.
 // The following code samples are still beta. For any issue, please report via http://github.com/OpenAPITools/openapi-generator/issues/new
 import OpenAPIClient
 
-let userUpdateMe = UserUpdateMe(fullName: "fullName_example", email: "email_example") // UserUpdateMe | 
+let userUpdateMe = UserUpdateMe(email: "email_example", fullName: "fullName_example") // UserUpdateMe | 
 
 // Update User Me
 UsersAPI.usersUpdateUserMe(userUpdateMe: userUpdateMe) { (response, error) in

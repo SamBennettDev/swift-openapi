@@ -69,7 +69,7 @@ Update User Subscription
 import OpenAPIClient
 
 let userId = 987 // UUID | 
-let updateSubscription = UpdateSubscription(stripeSubscriptionId: "stripeSubscriptionId_example", stripeProductId: "stripeProductId_example", planName: "planName_example", subscriptionStatus: "subscriptionStatus_example") // UpdateSubscription | 
+let updateSubscription = UpdateSubscription(planName: "planName_example", stripeProductId: "stripeProductId_example", stripeSubscriptionId: "stripeSubscriptionId_example", subscriptionStatus: "subscriptionStatus_example") // UpdateSubscription | 
 
 // Update User Subscription
 WebhookAPI.webhookUpdateUserSubscription(userId: userId, updateSubscription: updateSubscription) { (response, error) in

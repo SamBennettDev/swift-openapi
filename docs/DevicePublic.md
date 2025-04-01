@@ -3,9 +3,9 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**name** | **String** |  | 
 **id** | **UUID** |  | 
 **ipAddress** | **String** |  | 
+**name** | **String** |  | 
 **privateKey** | **String** |  | 
 **publicKey** | **String** |  | 
 **userId** | **UUID** |  | 

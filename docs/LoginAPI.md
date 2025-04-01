@@ -11,7 +11,7 @@ Method | HTTP request | Description
 
 # **loginLoginAccessToken**
 ```swift
-    open class func loginLoginAccessToken(username: String, password: String, grantType: String? = nil, scope: String? = nil, clientId: String? = nil, clientSecret: String? = nil, completion: @escaping (_ data: Token?, _ error: Error?) -> Void)
+    open class func loginLoginAccessToken(password: String, username: String, clientId: String? = nil, clientSecret: String? = nil, grantType: String? = nil, scope: String? = nil, completion: @escaping (_ data: Token?, _ error: Error?) -> Void)
 ```
 
 Login Access Token
@@ -23,15 +23,15 @@ OAuth2 compatible token login, get an access token for future requests
 // The following code samples are still beta. For any issue, please report via http://github.com/OpenAPITools/openapi-generator/issues/new
 import OpenAPIClient
 
-let username = "username_example" // String | 
 let password = "password_example" // String | 
-let grantType = "grantType_example" // String |  (optional)
-let scope = "scope_example" // String |  (optional) (default to "")
+let username = "username_example" // String | 
 let clientId = "clientId_example" // String |  (optional)
 let clientSecret = "clientSecret_example" // String |  (optional)
+let grantType = "grantType_example" // String |  (optional)
+let scope = "scope_example" // String |  (optional) (default to "")
 
 // Login Access Token
-LoginAPI.loginLoginAccessToken(username: username, password: password, grantType: grantType, scope: scope, clientId: clientId, clientSecret: clientSecret) { (response, error) in
+LoginAPI.loginLoginAccessToken(password: password, username: username, clientId: clientId, clientSecret: clientSecret, grantType: grantType, scope: scope) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -47,12 +47,12 @@ LoginAPI.loginLoginAccessToken(username: username, password: password, grantType
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **username** | **String** |  | 
  **password** | **String** |  | 
- **grantType** | **String** |  | [optional] 
- **scope** | **String** |  | [optional] [default to &quot;&quot;]
+ **username** | **String** |  | 
  **clientId** | **String** |  | [optional] 
  **clientSecret** | **String** |  | [optional] 
+ **grantType** | **String** |  | [optional] 
+ **scope** | **String** |  | [optional] [default to &quot;&quot;]
 
 ### Return type
 

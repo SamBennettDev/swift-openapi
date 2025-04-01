@@ -25,7 +25,7 @@ Create new habit.
 // The following code samples are still beta. For any issue, please report via http://github.com/OpenAPITools/openapi-generator/issues/new
 import OpenAPIClient
 
-let habitCreate = HabitCreate(title: "title_example", lastCompleted: Date()) // HabitCreate | 
+let habitCreate = HabitCreate(lastCompleted: Date(), title: "title_example") // HabitCreate | 
 
 // Create Habit
 HabitsAPI.habitsCreateHabit(habitCreate: habitCreate) { (response, error) in
@@ -222,7 +222,7 @@ Update a habit.
 import OpenAPIClient
 
 let id = 987 // UUID | 
-let habitUpdate = HabitUpdate(title: "title_example", lastCompleted: Date()) // HabitUpdate | 
+let habitUpdate = HabitUpdate(lastCompleted: Date(), title: "title_example") // HabitUpdate | 
 
 // Update Habit
 HabitsAPI.habitsUpdateHabit(id: id, habitUpdate: habitUpdate) { (response, error) in

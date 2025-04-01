@@ -9,7 +9,7 @@ Method | HTTP request | Description
 
 # **systemCreateBlockedRequestAttempt**
 ```swift
-    open class func systemCreateBlockedRequestAttempt(blockedDomainAttemptServer: BlockedDomainAttemptServer, completion: @escaping (_ data: JSONValue?, _ error: Error?) -> Void)
+    open class func systemCreateBlockedRequestAttempt(blockedDomainAttemptServer: BlockedDomainAttemptServer, completion: @escaping (_ data: AnyCodable?, _ error: Error?) -> Void)
 ```
 
 Create Blocked Request Attempt
@@ -21,7 +21,7 @@ Create a blocked request attempt. This endpoint can only be accessed with a vali
 // The following code samples are still beta. For any issue, please report via http://github.com/OpenAPITools/openapi-generator/issues/new
 import OpenAPIClient
 
-let blockedDomainAttemptServer = BlockedDomainAttemptServer(ip: "ip_example", domain: "domain_example", timeStamp: Date()) // BlockedDomainAttemptServer | 
+let blockedDomainAttemptServer = BlockedDomainAttemptServer(domain: "domain_example", ip: "ip_example", timeStamp: Date()) // BlockedDomainAttemptServer | 
 
 // Create Blocked Request Attempt
 SystemAPI.systemCreateBlockedRequestAttempt(blockedDomainAttemptServer: blockedDomainAttemptServer) { (response, error) in
@@ -44,7 +44,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**JSONValue**
+**AnyCodable**
 
 ### Authorization
 

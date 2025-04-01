@@ -25,7 +25,7 @@ Create new journal_entry.
 // The following code samples are still beta. For any issue, please report via http://github.com/OpenAPITools/openapi-generator/issues/new
 import OpenAPIClient
 
-let journalEntryCreate = JournalEntryCreate(title: "title_example", hashedEntry: "hashedEntry_example", lastModified: Date()) // JournalEntryCreate | 
+let journalEntryCreate = JournalEntryCreate(hashedEntry: "hashedEntry_example", lastModified: Date(), title: "title_example") // JournalEntryCreate | 
 
 // Create Journal Entry
 JournalAPI.journalCreateJournalEntry(journalEntryCreate: journalEntryCreate) { (response, error) in
@@ -222,7 +222,7 @@ Update a journal_entry.
 import OpenAPIClient
 
 let id = 987 // UUID | 
-let journalEntryUpdate = JournalEntryUpdate(title: "title_example", hashedEntry: "hashedEntry_example", lastModified: Date()) // JournalEntryUpdate | 
+let journalEntryUpdate = JournalEntryUpdate(hashedEntry: "hashedEntry_example", lastModified: Date(), title: "title_example") // JournalEntryUpdate | 
 
 // Update Journal Entry
 JournalAPI.journalUpdateJournalEntry(id: id, journalEntryUpdate: journalEntryUpdate) { (response, error) in

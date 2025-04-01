@@ -24,7 +24,7 @@ Create a new blocked domain attempt.
 // The following code samples are still beta. For any issue, please report via http://github.com/OpenAPITools/openapi-generator/issues/new
 import OpenAPIClient
 
-let blockedDomainAttemptCreate = BlockedDomainAttemptCreate(domainName: "domainName_example", timestamp: Date(), label: "label_example", deviceName: "deviceName_example") // BlockedDomainAttemptCreate | 
+let blockedDomainAttemptCreate = BlockedDomainAttemptCreate(deviceName: "deviceName_example", domainName: "domainName_example", label: "label_example", timestamp: Date()) // BlockedDomainAttemptCreate | 
 
 // Create Blocked Domain Attempt
 BlockedDomainAttemptsAPI.blockedDomainAttemptsCreateBlockedDomainAttempt(blockedDomainAttemptCreate: blockedDomainAttemptCreate) { (response, error) in
