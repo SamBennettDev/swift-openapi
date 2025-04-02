@@ -307,7 +307,7 @@ This endpoint does not need any parameter.
 
 # **usersReadUserWithAllData**
 ```swift
-    open class func usersReadUserWithAllData(userId: UUID, completion: @escaping (_ data: AnyCodable?, _ error: Error?) -> Void)
+    open class func usersReadUserWithAllData(userId: UUID, completion: @escaping (_ data: JSONValue?, _ error: Error?) -> Void)
 ```
 
 Read User With All Data
@@ -342,7 +342,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**AnyCodable**
+**JSONValue**
 
 ### Authorization
 
